@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Android | codingの鹿先生</title>
+  <title>基于Android蓝牙4.0实现终端遥控蓝牙小车 | codingの鹿先生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我想变成风，去撩一撩你">
-<meta property="og:type" content="website">
-<meta property="og:title" content="codingの鹿先生">
-<meta property="og:url" content="http://yoursite.com/tags/Android/index.html">
+  <meta name="description" content="蓝牙小车遥控界面  蓝牙小车实物图  前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。">
+<meta name="keywords" content="Android,蓝牙4.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Android蓝牙4.0实现终端遥控蓝牙小车">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/android-bluetooth-smart-car/index.html">
 <meta property="og:site_name" content="codingの鹿先生">
-<meta property="og:description" content="我想变成风，去撩一撩你">
+<meta property="og:description" content="蓝牙小车遥控界面  蓝牙小车实物图  前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。">
+<meta property="og:image" content="http://yoursite.com/2017/05/15/android-bluetooth-smart-car/bluetooth_car_control_ui.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/15/android-bluetooth-smart-car/bluetooth_car.jpg">
+<meta property="og:updated_time" content="2017-05-15T13:49:13.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codingの鹿先生">
-<meta name="twitter:description" content="我想变成风，去撩一撩你">
+<meta name="twitter:title" content="基于Android蓝牙4.0实现终端遥控蓝牙小车">
+<meta name="twitter:description" content="蓝牙小车遥控界面  蓝牙小车实物图  前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/15/android-bluetooth-smart-car/bluetooth_car_control_ui.jpg">
   
     <link rel="alternative" href="/atom.xml" title="codingの鹿先生" type="application/atom+xml">
   
@@ -156,36 +161,138 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-android-bluetooth-smart-car" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      基于Android蓝牙4.0实现终端遥控蓝牙小车
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/android-bluetooth-smart-car/" class="archive-article-date">
+
+        
+        <a href="/2017/05/15/android-bluetooth-smart-car/" class="archive-article-date">
   	<time datetime="2017-05-15T13:47:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/android-bluetooth-smart-car/">基于Android蓝牙4.0实现终端遥控蓝牙小车</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>蓝牙小车遥控界面</strong></p>
+<p><img src="bluetooth_car_control_ui.jpg" alt="“蓝牙小车遥控界面”"></p>
+<p><strong>蓝牙小车实物图</strong></p>
+<p><img src="bluetooth_car.jpg" alt="“蓝牙小车实物图”"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。</p>
+<a id="more"></a>
+<h2 id="蓝牙低功耗-BLE"><a href="#蓝牙低功耗-BLE" class="headerlink" title="蓝牙低功耗 BLE"></a>蓝牙低功耗 BLE</h2><p>谷歌在Android 4.3(API18)引入了蓝牙低功耗的概念，即所谓的蓝牙4.0，具有以下特性：</p>
+<ul>
+<li>在附近设备之间传输少量数据。</li>
+<li>与Google Beacon之类的接近传感器进行交互，可以根据用户的当前位置为用户提供自定义的体验。</li>
+</ul>
+<blockquote>
+<ul>
+<li>Transferring small amounts of data between nearby devices.</li>
+<li>Interacting with proximity sensors like Google Beacons to give users a customized experience based on their current location.</li>
+</ul>
+</blockquote>
+<p>这里的蓝牙小车基于51单片机和HC05或者CC2541蓝牙模块，手机端通过蓝牙4.0协议与小车蓝牙模块进行通信，从而实现终端控制蓝牙小车的功能。</p>
+<h2 id="BLE权限"><a href="#BLE权限" class="headerlink" title="BLE权限"></a>BLE权限</h2><p>在清单文件声明蓝牙权限：</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH_ADMIN&quot;/&gt;
+</code></pre><p>如果要声明应用仅适用于支持BLE的设备，可以在应用的清单中包含以下内容：</p>
+<pre><code>&lt;uses-feature android:name=&quot;android.hardware.bluetooth_le&quot; android:required=&quot;true&quot;/&gt;
+</code></pre><p>判断设备是否支持BLE</p>
+<pre><code>// Use this check to determine whether BLE is supported on the device. Then
+// you can selectively disable BLE-related features.
+if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+    Toast.makeText(this, R.string.ble_not_supported, Toast.LENGTH_SHORT).show();
+    finish();
+</code></pre><p>}</p>
+<h2 id="配置BLE"><a href="#配置BLE" class="headerlink" title="配置BLE"></a>配置BLE</h2><h3 id="1-获取BluetoothAdapter"><a href="#1-获取BluetoothAdapter" class="headerlink" title="1.获取BluetoothAdapter"></a>1.获取BluetoothAdapter</h3><pre><code>private BluetoothAdapter mBluetoothAdapter;
+...
+// Initializes Bluetooth adapter.
+final BluetoothManager bluetoothManager =
+    (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+mBluetoothAdapter = bluetoothManager.getAdapter();
+</code></pre><h3 id="2-Enable蓝牙"><a href="#2-Enable蓝牙" class="headerlink" title="2.Enable蓝牙"></a>2.Enable蓝牙</h3><pre><code>// Ensures Bluetooth is available on the device and it is enabled. If not,
+// displays a dialog requesting user permission to enable Bluetooth.
+if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
+    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+}
+</code></pre><h3 id="3-扫描BLE设备"><a href="#3-扫描BLE设备" class="headerlink" title="3.扫描BLE设备"></a>3.扫描BLE设备</h3><pre><code>private BluetoothAdapter mBluetoothAdapter;
+private boolean mScanning;
+private Handler mHandler;
 
-        <div class="article-info info-on-right">
-          
+// Stops scanning after 10 seconds.
+private static final long SCAN_PERIOD = 10000;
+...
+private void scanLeDevice(final boolean enable) {
+    if (enable) {
+        // Stops scanning after a pre-defined scan period.
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mScanning = false;
+                mBluetoothAdapter.stopLeScan(mLeScanCallback);
+            }
+        }, SCAN_PERIOD);
+
+        mScanning = true;
+        mBluetoothAdapter.startLeScan(mLeScanCallback);
+    } else {
+        mScanning = false;
+        mBluetoothAdapter.stopLeScan(mLeScanCallback);
+    }
+    ...
+}
+</code></pre><p>其中mLeScanCallback是BluetoothAdapter.LeScanCallback的实现，它是用于传递BLE扫描结果的接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">private LeDeviceListAdapter mLeDeviceListAdapter;</div><div class="line">...</div><div class="line">// Device scan callback.</div><div class="line">private BluetoothAdapter.LeScanCallback mLeScanCallback =</div><div class="line">        new BluetoothAdapter.LeScanCallback() &#123;</div><div class="line">    @Override</div><div class="line">    public void onLeScan(final BluetoothDevice device, int rssi,</div><div class="line">            byte[] scanRecord) &#123;</div><div class="line">        runOnUiThread(new Runnable() &#123;</div><div class="line">           @Override</div><div class="line">           public void run() &#123;</div><div class="line">               mLeDeviceListAdapter.addDevice(device);</div><div class="line">               mLeDeviceListAdapter.notifyDataSetChanged();</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">   &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="4-连接蓝牙设备"><a href="#4-连接蓝牙设备" class="headerlink" title="4.连接蓝牙设备"></a>4.连接蓝牙设备</h3><p>通过mBluetoothGatt对象连接与断开连接蓝牙设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">    * Connects to the GATT server hosted on the Bluetooth LE device.</div><div class="line">    *</div><div class="line">    * @param address The device address of the destination device.</div><div class="line">    *</div><div class="line">    * @return Return true if the connection is initiated successfully. The connection result</div><div class="line">    *         is reported asynchronously through the</div><div class="line">    *         &#123;@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)&#125;</div><div class="line">    *         callback.</div><div class="line">    */</div><div class="line">   public boolean connect(final String address) &#123;</div><div class="line">       if (mBluetoothAdapter == null || address == null) &#123;</div><div class="line">           Log.w(TAG, &quot;BluetoothAdapter not initialized or unspecified address.&quot;);</div><div class="line">           return false;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       // Previously connected device.  Try to reconnect.</div><div class="line">       if (mBluetoothDeviceAddress != null &amp;&amp; address.equals(mBluetoothDeviceAddress)</div><div class="line">               &amp;&amp; mBluetoothGatt != null) &#123;</div><div class="line">           Log.d(TAG, &quot;Trying to use an existing mBluetoothGatt for connection.&quot;);</div><div class="line">           if (mBluetoothGatt.connect()) &#123;</div><div class="line">               mConnectionState = STATE_CONNECTING;</div><div class="line">               return true;</div><div class="line">           &#125; else &#123;</div><div class="line">               return false;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       final BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);</div><div class="line">       if (device == null) &#123;</div><div class="line">           Log.w(TAG, &quot;Device not found.  Unable to connect.&quot;);</div><div class="line">           return false;</div><div class="line">       &#125;</div><div class="line">       // We want to directly connect to the device, so we are setting the autoConnect</div><div class="line">       // parameter to false.</div><div class="line">       mBluetoothGatt = device.connectGatt(this, false, mGattCallback);</div><div class="line">       Log.d(TAG, &quot;Trying to create a new connection.&quot;);</div><div class="line">       mBluetoothDeviceAddress = address;</div><div class="line">       mConnectionState = STATE_CONNECTING;</div><div class="line">       return true;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="5-断开蓝牙设备"><a href="#5-断开蓝牙设备" class="headerlink" title="5.断开蓝牙设备"></a>5.断开蓝牙设备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Disconnects an existing connection or cancel a pending connection. The disconnection result</div><div class="line"> * is reported asynchronously through the</div><div class="line"> * &#123;@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)&#125;</div><div class="line"> * callback.</div><div class="line"> */</div><div class="line">public void disconnect() &#123;</div><div class="line">    if (mBluetoothAdapter == null || mBluetoothGatt == null) &#123;</div><div class="line">        Log.w(TAG, &quot;BluetoothAdapter not initialized&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    mBluetoothGatt.disconnect();</div><div class="line">&#125;</div><div class="line">public boolean isconnect() &#123;</div><div class="line">   </div><div class="line">    </div><div class="line">   return mBluetoothGatt.connect();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Android与蓝牙模块通信"><a href="#Android与蓝牙模块通信" class="headerlink" title="Android与蓝牙模块通信"></a>Android与蓝牙模块通信</h2><p>手机端通过点击按钮遥控小车前进、后退、转弯、加速等操作，实际上底层是通过蓝牙协议发送字符串到蓝牙模块进行通信。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onClick(View v) &#123;</div><div class="line">	switch(v.getId())&#123;</div><div class="line">	case R.id.btnUp:</div><div class="line">		mBluetoothLeService.txxx(&quot;66&quot;);</div><div class="line">		break;</div><div class="line">           case R.id.btnDown:</div><div class="line">               mBluetoothLeService.txxx(&quot;62&quot;);</div><div class="line">               break;</div><div class="line">	case R.id.btnStop:</div><div class="line">		mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">		break;</div><div class="line">           case R.id.btnLeft:</div><div class="line">               mBluetoothLeService.txxx(&quot;6C&quot;);</div><div class="line">               break;</div><div class="line">           case R.id.btnRight:</div><div class="line">               mBluetoothLeService.txxx(&quot;72&quot;);</div><div class="line">               break;</div><div class="line">           case R.id.btnUpAcc:</div><div class="line">               mBluetoothLeService.txxx(&quot;46&quot;);</div><div class="line">               break;</div><div class="line">           case R.id.btnDownAcc:</div><div class="line">               mBluetoothLeService.txxx(&quot;42&quot;);</div><div class="line">               break;</div><div class="line">           case R.id.btnLeftRound:</div><div class="line">               mBluetoothLeService.txxx(&quot;4C&quot;);</div><div class="line">               break;</div><div class="line">           case R.id.btnRightRound:</div><div class="line">               mBluetoothLeService.txxx(&quot;52&quot;);</div><div class="line">               break;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>为了优化用户操作，笔者还重写了按钮的onTouch事件，当用户手指按下时，保持小车现在的状态，当用户手机离开手机屏幕时，发送停止字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public boolean onTouch(View view, MotionEvent motionEvent) &#123;</div><div class="line"></div><div class="line">    switch (view.getId())&#123;</div><div class="line">        case R.id.btnUp:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;66&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnDown:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;62&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnStop:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnLeft:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;6C&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnRight:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;72&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnUpAcc:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;46&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnDownAcc:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;42&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnLeftRound:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;4C&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">        case R.id.btnRightRound:</div><div class="line">            switch (motionEvent.getAction())&#123;</div><div class="line">                case MotionEvent.ACTION_DOWN:</div><div class="line">                    mBluetoothLeService.txxx(&quot;52&quot;);</div><div class="line">                    break;</div><div class="line">                case MotionEvent.ACTION_UP:</div><div class="line">                    mBluetoothLeService.txxx(&quot;73&quot;);</div><div class="line">                    break;</div><div class="line">            &#125;</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="细节优化"><a href="#细节优化" class="headerlink" title="细节优化"></a>细节优化</h2><p>因为横屏状态下比较好操作遥控界面，因此可以在清单文件对相应界面进行以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=&quot;.DeviceControlActivity&quot;</div><div class="line">    android:configChanges=&quot;keyboardHidden|orientation&quot;</div><div class="line">    android:screenOrientation=&quot;landscape&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>测试音乐</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="430" height="86" src="//music.163.com/outchain/player?type=2&id=114389&auto=0&height=66"></iframe>
+
+<p>测试视频</p>
+<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=8506694&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,61 +308,89 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/15/android-bluetooth-smart-car/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/android-bluetooth-car/" class="archive-article-date">
-  	<time datetime="2017-05-15T11:46:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/android-bluetooth-car/">基于Android蓝牙4.0实现终端遥控蓝牙小车</a>
-    </h1>
+  
+    <a href="/2017/05/15/android-bluetooth-car/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Android蓝牙4.0实现终端遥控蓝牙小车</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">蓝牙4.0</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -278,9 +413,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
