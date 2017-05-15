@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 标签二 | codingの鹿先生</title>
+  <title>基于Android蓝牙4.0实现终端遥控蓝牙小车 | codingの鹿先生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我想变成风，去撩一撩你">
-<meta property="og:type" content="website">
-<meta property="og:title" content="codingの鹿先生">
-<meta property="og:url" content="http://yoursite.com/tags/标签二/index.html">
+  <meta name="description" content="前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。 蓝牙低功耗 BLE谷歌在Android 4.3(API18)引入了蓝牙低功耗的概念，即所谓的蓝牙4.0，具有以下特性：  在附近设备之间传输少量数据。 与Google Beacon之类的接近传感器进行交互，可以根据用户的当前位置为用户提供自定义的体">
+<meta name="keywords" content="Android 蓝牙4.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Android蓝牙4.0实现终端遥控蓝牙小车">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/android-bluetooth-car/android-bluetooth-car/index.html">
 <meta property="og:site_name" content="codingの鹿先生">
-<meta property="og:description" content="我想变成风，去撩一撩你">
+<meta property="og:description" content="前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。 蓝牙低功耗 BLE谷歌在Android 4.3(API18)引入了蓝牙低功耗的概念，即所谓的蓝牙4.0，具有以下特性：  在附近设备之间传输少量数据。 与Google Beacon之类的接近传感器进行交互，可以根据用户的当前位置为用户提供自定义的体">
+<meta property="og:updated_time" content="2017-05-15T12:12:54.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codingの鹿先生">
-<meta name="twitter:description" content="我想变成风，去撩一撩你">
+<meta name="twitter:title" content="基于Android蓝牙4.0实现终端遥控蓝牙小车">
+<meta name="twitter:description" content="前言每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。 蓝牙低功耗 BLE谷歌在Android 4.3(API18)引入了蓝牙低功耗的概念，即所谓的蓝牙4.0，具有以下特性：  在附近设备之间传输少量数据。 与Google Beacon之类的接近传感器进行交互，可以根据用户的当前位置为用户提供自定义的体">
   
     <link rel="alternative" href="/atom.xml" title="codingの鹿先生" type="application/atom+xml">
   
@@ -156,64 +158,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-android-bluetooth-car/android-bluetooth-car" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/14/article-title/" class="archive-article-date">
-  	<time datetime="2017-05-14T12:23:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/article-title/">article title</a>
+    <h1 class="article-title" itemprop="name">
+      基于Android蓝牙4.0实现终端遥控蓝牙小车
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/15/android-bluetooth-car/android-bluetooth-car/" class="archive-article-date">
+  	<time datetime="2017-05-15T11:46:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>每年的四五月份是我们学院的科创月，今年在智能车单元组里面开设了蓝牙小车比赛。之前学习Android开发基本没有接触到蓝牙知识，趁这个机会恶补一番。</p>
+<h2 id="蓝牙低功耗-BLE"><a href="#蓝牙低功耗-BLE" class="headerlink" title="蓝牙低功耗 BLE"></a>蓝牙低功耗 BLE</h2><p>谷歌在Android 4.3(API18)引入了蓝牙低功耗的概念，即所谓的蓝牙4.0，具有以下特性：</p>
+<ul>
+<li>在附近设备之间传输少量数据。</li>
+<li>与Google Beacon之类的接近传感器进行交互，可以根据用户的当前位置为用户提供自定义的体验。</li>
+</ul>
+<blockquote>
+<ul>
+<li>Transferring small amounts of data between nearby devices.</li>
+<li>Interacting with proximity sensors like Google Beacons to give users a customized experience based on their current location.</li>
+</ul>
+</blockquote>
+<p>这里的蓝牙小车基于51单片机和HC05或者CC2541蓝牙模块，手机端通过蓝牙4.0协议与小车蓝牙模块进行通信，从而实现终端控制蓝牙小车的功能。</p>
+<h2 id="BLE权限"><a href="#BLE权限" class="headerlink" title="BLE权限"></a>BLE权限</h2><p>在清单文件声明蓝牙权限：</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH_ADMIN&quot;/&gt;
+</code></pre><p>如果要声明应用仅适用于支持BLE的设备，可以在应用的清单中包含以下内容：</p>
+<pre><code>&lt;uses-feature android:name=&quot;android.hardware.bluetooth_le&quot; android:required=&quot;true&quot;/&gt;
+</code></pre><p>判断设备是否支持BLE</p>
+<pre><code>// Use this check to determine whether BLE is supported on the device. Then
+// you can selectively disable BLE-related features.
+if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+    Toast.makeText(this, R.string.ble_not_supported, Toast.LENGTH_SHORT).show();
+    finish();
+</code></pre><p>}</p>
+<h2 id="配置BLE"><a href="#配置BLE" class="headerlink" title="配置BLE"></a>配置BLE</h2><h3 id="1-获取BluetoothAdapter"><a href="#1-获取BluetoothAdapter" class="headerlink" title="1.获取BluetoothAdapter"></a>1.获取BluetoothAdapter</h3><pre><code>private BluetoothAdapter mBluetoothAdapter;
+...
+// Initializes Bluetooth adapter.
+final BluetoothManager bluetoothManager =
+    (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+mBluetoothAdapter = bluetoothManager.getAdapter();
+</code></pre><h3 id="2-Enable蓝牙"><a href="#2-Enable蓝牙" class="headerlink" title="2.Enable蓝牙"></a>2.Enable蓝牙</h3><pre><code>// Ensures Bluetooth is available on the device and it is enabled. If not,
+// displays a dialog requesting user permission to enable Bluetooth.
+if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
+    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+}
+</code></pre><h3 id="3-扫描BLE设备"><a href="#3-扫描BLE设备" class="headerlink" title="3.扫描BLE设备"></a>3.扫描BLE设备</h3><pre><code>private BluetoothAdapter mBluetoothAdapter;
+private boolean mScanning;
+private Handler mHandler;
+
+// Stops scanning after 10 seconds.
+private static final long SCAN_PERIOD = 10000;
+...
+private void scanLeDevice(final boolean enable) {
+    if (enable) {
+        // Stops scanning after a pre-defined scan period.
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mScanning = false;
+                mBluetoothAdapter.stopLeScan(mLeScanCallback);
+            }
+        }, SCAN_PERIOD);
+
+        mScanning = true;
+        mBluetoothAdapter.startLeScan(mLeScanCallback);
+    } else {
+        mScanning = false;
+        mBluetoothAdapter.stopLeScan(mLeScanCallback);
+    }
+    ...
+}
+</code></pre><p>其中mLeScanCallback是BluetoothAdapter.LeScanCallback的实现，它是用于传递BLE扫描结果的接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">private LeDeviceListAdapter mLeDeviceListAdapter;</div><div class="line">...</div><div class="line">// Device scan callback.</div><div class="line">private BluetoothAdapter.LeScanCallback mLeScanCallback =</div><div class="line">        new BluetoothAdapter.LeScanCallback() &#123;</div><div class="line">    @Override</div><div class="line">    public void onLeScan(final BluetoothDevice device, int rssi,</div><div class="line">            byte[] scanRecord) &#123;</div><div class="line">        runOnUiThread(new Runnable() &#123;</div><div class="line">           @Override</div><div class="line">           public void run() &#123;</div><div class="line">               mLeDeviceListAdapter.addDevice(device);</div><div class="line">               mLeDeviceListAdapter.notifyDataSetChanged();</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">   &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签一</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签二</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Android 蓝牙4.0</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/15/android-bluetooth-car/android-bluetooth-car/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/15/android-bluetooth-car/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          android-bluetooth-car
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/05/14/article-title/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">article title</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -236,9 +397,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
